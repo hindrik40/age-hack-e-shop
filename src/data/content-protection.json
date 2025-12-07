@@ -1,0 +1,43 @@
+{
+  "contentProtection": {
+    "version": "1.0",
+    "created": "2024-12-05",
+    "protectedContent": {
+      "courses": [
+        "Personlig Utveckling & Mindfulness",
+        "Mental Hälsa & Kognitiv Förbättring", 
+        "Anti-Aging Grundkurs",
+        "Avancerad Näringsterapi",
+        "Hormonell Balans för Kvinnor",
+        "Sömnoptimering & Recovery"
+      ],
+      "articles": [
+        "vetenskaplig-forskning",
+        "anti-aging-science-2025",
+        "therapeutic-peptides-2025",
+        "aging-signs",
+        "anti-aging-nutrition",
+        "supplement-timing",
+        "vagus-nerve-health",
+        "citrullin"
+      ],
+      "categories": [
+        "Personlig Utveckling",
+        "Mental Hälsa", 
+        "Anti-aging",
+        "Nutrition"
+      ]
+    },
+    "backupSettings": {
+      "autoBackup": true,
+      "backupFrequency": "daily",
+      "retentionDays": 30,
+      "protectedFromDeletion": true
+    },
+    "alerts": {
+      "notifyOnChange": true,
+      "requireApproval": true,
+      "emergencyContact": "user"
+    }
+  }
+}

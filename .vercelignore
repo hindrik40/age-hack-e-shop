@@ -1,0 +1,14 @@
+# Ignore heavy or dev-only content for Vercel uploads
+node_modules/
+.next/
+.vscode/
+.git/
+coverage/
+**/*.log
+**/*.tmp
+**/*.cache
+
+# Optional: exclude local assets or docs if large
+public/temp/
+docs/
+supabase/

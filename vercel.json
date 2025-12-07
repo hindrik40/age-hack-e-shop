@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "installCommand": "npm ci || npm install",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "env": {
+    "NEXT_PUBLIC_REVISIONS_PASSWORD": "review",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://tybrjgkxloyxptwaepzo.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5YnJqZ2t4bG95eHB0d2FlcHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc5NTMwNDYsImV4cCI6MjA3MzUyOTA0Nn0.mfga6OlGdSD77e4xjSl--9yEugmCn6sBKiuNEgW5lh0"
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
