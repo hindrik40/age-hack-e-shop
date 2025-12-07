@@ -20,7 +20,7 @@ export default function AntiAgingEducation() {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <button onClick={() => router.back()} className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium">Tillbaka</button>
-          <button onClick={() => { if (typeof window !== 'undefined') window.location.href = '/' }} className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 flex items-center gap-2">
+          <button onClick={() => router.push('/')} className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 flex items-center gap-2">
             <Home className="w-4 h-4" />
             Till startsidan
           </button>

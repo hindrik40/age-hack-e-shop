@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useCartStore } from '@/store/cartStore';
 import { CreditCard, Truck, User, Phone, Mail, MapPin, Lock } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function CheckoutPage() {
+  const router = useRouter();
   const { items, getTotalPrice, clearCart } = useCartStore();
   const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
@@ -39,7 +41,7 @@ export default function CheckoutPage() {
     const proceed = window.confirm(t('checkout.confirmMessage'));
     if (!proceed) {
       toast.info(t('checkout.continueShopping'), { duration: 3000 });
-      window.location.href = '/products';
+      router.push('/products');
       return;
     }
 
@@ -51,7 +53,7 @@ export default function CheckoutPage() {
       });
       clearCart();
       setIsProcessing(false);
-      window.location.href = '/order-success';
+      router.push('/order-success');
     }, 3000);
   };
 

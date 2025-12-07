@@ -2,11 +2,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Trash2, Plus, Minus, ArrowLeft, Heart, Clock, RefreshCw } from 'lucide-react'
 import { useCartStore } from '@/store/cartStore'
 import { useEffect } from 'react'
 
 export default function CartPage() {
+  const router = useRouter()
   const { 
     items, 
     savedForLater, 
@@ -30,8 +32,7 @@ export default function CartPage() {
   const total = getTotalPrice()
 
   const handleCheckout = () => {
-    // Redirect to checkout page
-    window.location.href = '/checkout'
+    router.push('/checkout')
   }
 
   // Sync cart when component mounts

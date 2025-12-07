@@ -323,7 +323,7 @@ export default function AntiAgingCourse() {
               Tillbaka
             </button>
             <button
-              onClick={() => { if (typeof window !== 'undefined') window.location.href = '/' }}
+              onClick={() => router.push('/')}
               className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 flex items-center gap-2"
             >
               <Home className="w-4 h-4" />

@@ -24,7 +24,7 @@ export default function EducationPage() {
         </button>
         <button
           aria-label={language === 'sv' ? 'Till startsidan' : 'Home'}
-          onClick={() => { if (typeof window !== 'undefined') window.location.href = '/' }}
+          onClick={() => router.push('/')}
           className="px-5 py-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 text-sm sm:text-base"
         >
           {language === 'sv' ? 'Till startsidan' : 'Home'}

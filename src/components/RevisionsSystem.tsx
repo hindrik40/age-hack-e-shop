@@ -88,6 +88,12 @@ export function RevisionsSystem({
     }
   }, [autoInitialize, enableProtection])
 
+  useEffect(() => {
+    if (isInitialized) {
+      traeIntegration.updateConfig({ warnBeforeExit: false })
+    }
+  }, [isInitialized])
+
   // Uppdatera systemhälsa baserat på status
   useEffect(() => {
     if (initializationError) {

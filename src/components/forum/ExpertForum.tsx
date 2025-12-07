@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getQuestions, getSpecializations, Question, ExpertSpecialization } from '@/lib/api/forum';
 import { QuestionCard } from './QuestionCard';
@@ -10,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Loader2, Search, MessageSquare, Users } from 'lucide-react';
 
 export function ExpertForum() {
+  const router = useRouter();
   const { t, language } = useLanguage();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [specializations, setSpecializations] = useState<ExpertSpecialization[]>([]);
@@ -164,7 +166,7 @@ export function ExpertForum() {
 
           <div className="mt-6 space-y-3">
             <button 
-              onClick={() => window.location.href = '/forum/ask'}
+              onClick={() => router.push('/forum/ask')}
               className="w-full inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
             >
               <MessageSquare className="h-4 w-4 mr-2" />
@@ -172,7 +174,7 @@ export function ExpertForum() {
             </button>
             
             <button 
-              onClick={() => window.location.href = '/experts'}
+              onClick={() => router.push('/experts')}
               className="w-full inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors"
             >
               <Users className="h-4 w-4 mr-2" />
@@ -203,7 +205,7 @@ export function ExpertForum() {
                   <p className="text-gray-600 mb-4">
                     {t('try_different_filters', 'Try adjusting your filters or be the first to ask a question!')}
                   </p>
-                  <button onClick={() => window.location.href = '/forum/ask'} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+                  <button onClick={() => router.push('/forum/ask')} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
                     {t('ask_first_question', 'Ask the First Question')}
                   </button>
                 </div>
