@@ -49,7 +49,7 @@ export class TraeWorkspaceIntegration {
     this.config = {
       autoRestoreOnStartup: true,
       createBackupOnExit: true,
-      warnBeforeExit: true,
+      warnBeforeExit: false,
       saveWorkspaceState: true,
       restoreLastPosition: true,
       enableAutoSave: true,
@@ -389,8 +389,10 @@ export class TraeWorkspaceIntegration {
 
   // Registrera event listeners
   private registerEventListeners(): void {
-    // Hantera sidavslut
-    window.addEventListener('beforeunload', this.handleBeforeUnload)
+    // Hantera sidavslut endast om varning är aktiverad
+    if (this.config.warnBeforeExit) {
+      window.addEventListener('beforeunload', this.handleBeforeUnload)
+    }
     
     // Hantera synlighetsändringar (tab/window focus)
     document.addEventListener('visibilitychange', this.handleVisibilityChange)
