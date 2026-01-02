@@ -344,6 +344,11 @@ export default function AntiAgingCourse() {
               Mästra konsten att åldras graciöst med vår omfattande 6-sessioners kurs. 
               Lär dig allt från grundläggande biologi till avancerade tekniker för optimal åldrande.
             </p>
+            <div className="mt-4">
+              <Link href="/" className="inline-block px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700">
+                Till startsidan
+              </Link>
+            </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />

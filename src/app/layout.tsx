@@ -30,11 +30,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://beta.age-hack.se'
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Inre & Yttre Skönhet",
-    "url": "https://inre-och-yttre-skonhet.vercel.app/",
+    "url": siteUrl,
     "logo": "/images/logo.png"
   };
 
@@ -42,10 +43,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Inre & Yttre Skönhet",
-    "url": "https://inre-och-yttre-skonhet.vercel.app/",
+    "url": siteUrl,
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://inre-och-yttre-skonhet.vercel.app/search?q={search_term_string}",
+      "target": `${siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };
